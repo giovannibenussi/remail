@@ -1,0 +1,19 @@
+{
+   "name": "remail",
+   "type": "module",
+   "source": "src/remail.js",
+   "exports": {
+      "require": "./dist/remail.cjs",
+      "default": "./dist/remail.modern.js"
+   },
+   "main": "./dist/remail.cjs",
+   "module": "./dist/remail.module.js",
+   "unpkg": "./dist/remail.umd.js",
+   "scripts": {
+      "build": "microbundle",
+      "dev": "microbundle watch"
+   },
+   "devDependencies": {
+      "microbundle": "^0.15.1"
+   }
+}
