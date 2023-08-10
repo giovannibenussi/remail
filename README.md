@@ -1,13 +1,14 @@
-# Remail
+# 💌 Remail
 
 Remail is a Remix library to improve the experience around building and sending emails. We accomplish this by:
 
-- Providing email previews for a faster (and sometimes cheaper) development workflow.
-- Pre-built plugins for common email providers like resend and mailgun.
+- Email previews for a faster (and sometimes cheaper) development workflow.
+- Pre-built adaptors for common email providers like [Resend](https://resend.com/) and [Mailgun](https://www.mailgun.com/).
 
 # Installation
 
 npm:
+
 `npm i remail`
 
 yarn:
