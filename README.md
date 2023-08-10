@@ -1,6 +1,6 @@
 # 💌 Remail
 
-Remail is a Remix library to improve the experience around building and sending emails. We accomplish this by:
+Remail is a [Remix.run](https://remix.run/) library to improve the experience around building and sending emails. We accomplish this by:
 
 - Email previews for a faster (and sometimes cheaper) development workflow.
 - Pre-built adaptors for common email providers like [Resend](https://resend.com/) and [Mailgun](https://www.mailgun.com/).
