@@ -5,6 +5,10 @@ Remail is a Remix library to improve the experience around building and sending 
 - Email previews for a faster (and sometimes cheaper) development workflow.
 - Pre-built adaptors for common email providers like [Resend](https://resend.com/) and [Mailgun](https://www.mailgun.com/).
 
+<hr />
+
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com)
+
 # Installation
 
 npm:
