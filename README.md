@@ -9,7 +9,13 @@ Remail is a [Remix.run](https://remix.run/) library to improve the experience ar
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com)
 
-# Installation
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Roadmap](#roadmap)
+
+## Installation
 
 npm:
 
@@ -19,7 +25,7 @@ yarn:
 
 `yarn add remail`
 
-# Usage
+## Usage
 
 Setup a provider:
 
@@ -46,7 +52,7 @@ function HelloWorld({ name }: { name: string }) {
 export default Remail(StripeWelcomeEmail);
 ```
 
-# Roadmap
+## Roadmap
 
 - Add default from email address.
 - Add layouts.
