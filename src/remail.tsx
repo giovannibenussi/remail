@@ -1,5 +1,4 @@
 import * as React from "react";
-import Sidebar from "./Sidebar.js";
 import "./styles.css";
 
 type InternalSendEmailProps = {
@@ -17,34 +16,19 @@ type RemailConstructor = {
 };
 
 export function Remail(config: RemailConstructor) {
-  return function RemailFactory(Component: React.ComponentType) {
+  return function RemailFactory(MyComponent: React.ComponentType) {
     class RemailEmail extends React.Component<
-      React.ComponentProps<typeof Component>
+      React.ComponentProps<typeof MyComponent>
     > {
       static async send(props: InternalSendEmailProps) {
-        return config.send({ ...props, Component });
+        return config.send({ ...props, Component: MyComponent });
       }
 
       render() {
-        return <Component {...this.props} />;
+        return <MyComponent {...this.props} />;
       }
     }
 
     return RemailEmail;
   };
-}
-
-export function EmailPreviews({
-  enableOnProduction,
-  emails,
-}: {
-  enableOnProduction?: boolean;
-  emails: any[];
-}) {
-  if (process.env.NODE_ENV === "production" && !enableOnProduction) {
-    throw new Error(
-      "Remail: Email previews are allowed only on development by default. Override setting this by adding the enableOnProduction prop in the EmailPreviews component."
-    );
-  }
-  return <Sidebar emails={emails} />;
 }

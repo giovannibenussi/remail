@@ -1,2 +1,3 @@
-export { Remail, EmailPreviews } from "./remail";
-export type { SendEmailProps } from "./remail";
+export { Remail, } from "./remail.js";
+export { EmailPreviews } from "./EmailPreviews.js";
+export type { SendEmailProps } from "./remail.js";

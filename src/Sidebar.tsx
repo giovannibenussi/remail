@@ -8,19 +8,21 @@ type EmailData = {
   cases: Array<{ description: string; email: React.ReactNode }>;
 };
 
-function EmailPreview({ emails }: { emails: EmailData[] }):
-  | {
-      title: string;
-      description: string;
-      preview: React.ReactNode;
-    }
-  | undefined {
-  const componentName = useSearchParam("componentName");
-  const description = useSearchParam("description");
+function EmailPreview({
+  componentName,
+  description,
+  emails,
+}: {
+  emails: EmailData[];
+  componentName: string | null;
+  description: string | null;
+}) {
+  console.log("componentName:", componentName);
+  console.log("description:", description);
 
   const currentEmail = emails?.find?.((email) => email.title === componentName);
   if (!currentEmail) {
-    return undefined;
+    return null;
   }
   const currentCases = currentEmail?.cases || [];
   const currentCase =
@@ -28,22 +30,28 @@ function EmailPreview({ emails }: { emails: EmailData[] }):
     currentCases?.[0] ||
     null;
 
-  if (!currentCase) {
-    return undefined;
+  if (!currentCase?.email) {
+    return null;
   }
 
-  const selectedEmailData = {
-    title: currentEmail.title,
-    description: currentCase?.description,
-    preview: <>{currentCase?.email}</>,
-  };
+  //const selectedEmailData = {
+  //title: currentEmail.title,
+  //description: currentCase?.description,
+  //preview: <>{currentCase?.email}</>,
+  //};
 
-  return selectedEmailData;
+  //<h1 style={{ fontSize: "2rem", fontWeight: "bold" }}>
+  //{selectedEmailData?.title} - {selectedEmailData?.description}
+  //</h1>
+
+  return <>{currentCase?.email}</>;
 }
 
-export default function Example({ emails }: { emails: EmailData[] }) {
+export function Sidebar({ emails }: { emails: EmailData[] }) {
   const componentName = useSearchParam("componentName");
   const description = useSearchParam("description");
+  const hello = useSearchParam("hello");
+  console.log("componentName:", componentName)
   const emailData =
     emails?.map?.((email) => ({
       name: email.title,
@@ -62,7 +70,6 @@ export default function Example({ emails }: { emails: EmailData[] }) {
           emailCase.description,
       })),
     })) || [];
-  const selectedEmailData = EmailPreview({ emails });
 
   return (
     <div
@@ -73,18 +80,19 @@ export default function Example({ emails }: { emails: EmailData[] }) {
       }}
     >
       <SidebarUI navigation={emailData} />
-      {selectedEmailData && (
-        <div
-          style={{
-            padding: "1rem",
+      <div
+        style={{
+          padding: "1rem",
+        }}
+      >
+        <EmailPreview
+          {...{
+            componentName,
+            description,
+            emails,
           }}
-        >
-          <h1 style={{ fontSize: "2rem", fontWeight: "bold" }}>
-            {selectedEmailData?.title} - {selectedEmailData?.description}
-          </h1>
-          {selectedEmailData?.preview}
-        </div>
-      )}
+        />
+      </div>
     </div>
   );
 }

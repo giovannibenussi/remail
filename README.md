@@ -1,6 +1,6 @@
 # 💌 Remail
 
-Remail is a [Remix.run](https://remix.run/) library to improve the experience around building and sending emails. We accomplish this by:
+Remail is a [Remix.run](https://remix.run/) library to improve the experience around building and sending emails. We accomplish this with:
 
 - Email previews for a faster (and sometimes cheaper) development workflow.
 - Pre-built adaptors for common email providers like [Resend](https://resend.com/) and [Mailgun](https://www.mailgun.com/).
@@ -60,9 +60,9 @@ export default Remail(StripeWelcomeEmail);
 - Attachments.
 - Exclude email previews from production by default.
 
-# Remix Indie Stack
+# Screenshots
 
-![The Remix Indie Stack](https://repository-images.githubusercontent.com/465928257/a241fa49-bd4d-485a-a2a5-5cb8e4ee0abf)
+![Remail Email Previews UI](https://repository-images.githubusercontent.com/465928257/a241fa49-bd4d-485a-a2a5-5cb8e4ee0abf)
 
 Learn more about [Remix Stacks](https://remix.run/stacks).
 
