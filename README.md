@@ -30,13 +30,13 @@ yarn:
 Setup a provider:
 
 ```jsx
-// We are setting up mailgun here
-import { Remail } from "remail";
-import { mailgunConfig } from "remail/mailgunConfig";
+// We are setting up resend here
+import { Remail } from "~/remail-proxy";
+import { resendConfig } from "./resend-config";
 
 const EmailConfig = Remail(
-  mailgunConfig({
-    api_key: process.env.MAILGUN_API_KEY,
+  resendConfig({
+    api_key: "re_iwABvur2_GZGpKcj9Rym4oh6JZN28oecA",
   })
 );
 

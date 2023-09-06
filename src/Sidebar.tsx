@@ -1,7 +1,7 @@
-import React from "react";
+import * as React from "react";
 import { DocumentDuplicateIcon } from "@heroicons/react/24/outline";
-import SidebarUI from "./NewSidebarUI";
-import { useSearchParam } from "./useSearchParam";
+import SidebarUI from "./NewSidebarUI.js";
+import { useSearchParam } from "./useSearchParam.js";
 
 type EmailData = {
   title: string;
@@ -51,7 +51,7 @@ export function Sidebar({ emails }: { emails: EmailData[] }) {
   const componentName = useSearchParam("componentName");
   const description = useSearchParam("description");
   const hello = useSearchParam("hello");
-  console.log("componentName:", componentName)
+  console.log("componentName:", componentName);
   const emailData =
     emails?.map?.((email) => ({
       name: email.title,
