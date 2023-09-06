@@ -1,5 +1,5 @@
 {
-  "name": "remail",
+  "name": "remix-email",
   "version": "0.0.1",
   "type": "module",
   "source": "src/index.ts",
